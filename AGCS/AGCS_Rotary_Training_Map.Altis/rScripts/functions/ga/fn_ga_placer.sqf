@@ -18,7 +18,7 @@
  * Public: No
  *
  */
-
+ if (!isServer) exitWith {};
 _GAArray=[];
 _townArray=[];
 _starttitle="";

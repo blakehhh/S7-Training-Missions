@@ -17,7 +17,7 @@
  *
  */
 params ["_randomLZArray", "_townFilter"];
-
+ if (!isServer) exitWith {};
 // Select a random LZ from the given list of locations
 _randomLZ = selectRandom _randomLZArray; 
 

@@ -18,6 +18,7 @@
  */
 
 params ["_limit","_noGunner"];
+ if (!isServer) exitWith {};
 // List of helicopters that can be spawned
 _randomHeli=[ 
 "RHS_Mi24P_vdv", 

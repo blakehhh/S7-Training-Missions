@@ -15,7 +15,7 @@
  * Public: No
  */
 params ["_location"];
-
+if (!isServer) exitWith {};
 // Initialize variables
 _smoketype = "";
 _sunrisetime = 8.00;

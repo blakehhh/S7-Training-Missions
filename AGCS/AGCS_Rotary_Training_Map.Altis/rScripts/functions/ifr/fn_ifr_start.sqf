@@ -15,6 +15,7 @@
  * Public: No
  *
  */
+  if (!isServer) exitWith {};
  //Sets the time to 3am, overcast to 1 and fog to 30% with 200m height along with breaking all the lights around LZ blind
 if (isServer) then { 
  "NVG_TargetC" createVehicle ([17542.5,13240.2,0]);  

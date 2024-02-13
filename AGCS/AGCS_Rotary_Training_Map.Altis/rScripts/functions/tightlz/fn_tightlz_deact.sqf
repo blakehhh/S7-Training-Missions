@@ -17,7 +17,7 @@
  *
  */
 params ["_randomLZArray", "_thisTrigger"];
-
+ if (!isServer) exitWith {};
 // Deletes the smoke in the tight LZ
 _locationtoclear = getPos _thisTrigger;
 _locationtoclear = [_locationtoclear select 0, _locationtoclear select 1, 0];

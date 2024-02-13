@@ -19,6 +19,7 @@
  * Public: No
  */
 params ["_AreatoCheck","_RoadCode"];
+ if (!isServer) exitWith {};
 //_AreatoCheck=TestTrg;
 //_RoadCode=2;
 _loop=true;
