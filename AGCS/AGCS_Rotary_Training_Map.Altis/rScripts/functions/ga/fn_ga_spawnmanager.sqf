@@ -1,27 +1,28 @@
 #include "..\script_component.hpp";
 /*
  * Author: CW3.Sparrow.P
- * This function finds a 
+ * This function handles the spawning of various units, including vehicles, infantry, and anti-aircraft units.
  *
  * Arguments:
- * 0: TriggerArea 
- * 1: MaxVic Maximum number of vechiles to spawn in
- * 2: VicOnRoadStatus do we care if the vehicle is spawned on a road
- * 3: MaxNumofSquads
- * 4: InfOnRoadStatus
- * 5: MaxIGLATurret
- * 6: IglaOnRoadStatus
- * 7: MaxRadarGuidedGun
- * 8: RadarGuidedGunStatus
+ * 0: _TriggerArea Trigger area object for spawning
+ * 1: _MaxVic Maximum number of vehicles to spawn
+ * 2: _VicOnRoadStatus Status indicating if vehicles should spawn on roads
+ * 3: _MaxNumofSquads Maximum number of infantry squads to spawn
+ * 4: _InfOnRoadStatus Status indicating if infantry should spawn on roads
+ * 5: _MaxIGLATurret Maximum number of Igla anti-aircraft turrets to spawn
+ * 6: _IglaOnRoadStatus Status indicating if Igla turrets should spawn on roads
+ * 7: _MaxRadarGuidedGun Maximum number of radar-guided gun units to spawn
+ * 8: _RadarGuidedGunStatus Status indicating if radar-guided gun units should spawn on roads
+ * 
  * Return Value:
- * Position Value
+ * Nothing
  *
  * Example:
- * [GA_KORE,1,0,0,0,0,1,0,0] call rScripts_fnc_ga_spawnmanager;
+ * [GA_KORE, 1, 0, 0, 0, 0, 1, 0, 0] call rScripts_fnc_ga_spawnmanager
  *
  * Public: No
- *
  */
+
 params [["_TriggerArea",objNull,[objNull]],["_MaxVic",3],["_VicOnRoadStatus",0],["_MaxNumofSquads",3],["_InfOnRoadStatus",0],["_MaxIGLATurret",1],["_IglaOnRoadStatus",1],["_MaxRadarGuidedGun",1],["_RadarGuidedGunStatus",0]];
 
 //OPFOR Units Definitions
@@ -124,139 +125,3 @@ _spawnsLeft=[_RadarGuidedGunStatus,_MaxRadarGuidedGun,_RadarGuidedGun,true,_Road
 _RoadSpawns=_spawnsLeft select 0;
 _NotRoadSpawns=_spawnsLeft select 1;
 _AllSpawns=_spawnsLeft select 2;
-
-/*_i=0;
-switch (_VicOnRoadStatus) do {
-	case 0:{while {_i<_MaxVic} do {
-					_SelectLoc=random count _RoadSpawns;
-					_Location = _RoadSpawns select _SelectLoc;
-					_VicToSpawn=selectRandom _randomVehicleArray;
-					[_Location,_VicToSpawn,true] call rScripts_fnc_ga_spawnunit;
-					_RoadSpawns deleteAt _SelectLoc;
-					_i=_i+1;
-				};	
-			};
-	case 1:{while {_i<_MaxVic} do {
-					_SelectLoc=random count _NotRoadSpawns;
-					_Location = _NotRoadSpawns select _SelectLoc;
-					_VicToSpawn=selectRandom _randomVehicleArray;
-					[_Location,_VicToSpawn,true] call rScripts_fnc_ga_spawnunit;
-					_NotRoadSpawns deleteAt _SelectLoc;
-					_i=_i+1;
-				};
-			};
-	case 2:{while {_i<_MaxVic} do {
-					_SelectLoc=random count _AllSpawns;
-					_Location = _AllSpawns select _SelectLoc;
-					_VicToSpawn=selectRandom _randomVehicleArray;
-					[_Location,_VicToSpawn,true] call rScripts_fnc_ga_spawnunit;
-					_AllSpawns deleteAt _SelectLoc;
-					_i=_i+1;
-				};
-			};
-};
-//systemChat "Spawned Vics";
-_i=0;
-switch (_InfOnRoadStatus) do {
-	case 0:{while {_i<_MaxNumofSquads} do {
-					_SelectLoc=random count _RoadSpawns;
-					_Location = _RoadSpawns select _SelectLoc;
-					_VicToSpawn=selectRandom _randomInfantryArray;
-					[_Location,_VicToSpawn,true] call rScripts_fnc_ga_spawnunit;
-					_RoadSpawns deleteAt _SelectLoc;
-					_i=_i+1;
-					//systemChat ["%1",_i];
-				};	
-			};
-	case 1:{while {_i<_MaxNumofSquads} do {
-					_SelectLoc=random count _NotRoadSpawns;
-					_Location = _NotRoadSpawns select _SelectLoc;
-					_VicToSpawn=selectRandom _randomInfantryArray;
-					[_Location,_VicToSpawn,true] call rScripts_fnc_ga_spawnunit;
-					_NotRoadSpawns deleteAt _SelectLoc;
-					_i=_i+1;
-					//systemChat ["%1",_i];
-				};
-			};
-	case 2:{while {_i<_MaxNumofSquads} do {
-					_SelectLoc=random count _AllSpawns;
-					_Location = _AllSpawns select _SelectLoc;
-					_VicToSpawn=selectRandom _randomInfantryArray;
-					[_Location,_VicToSpawn,true] call rScripts_fnc_ga_spawnunit;
-					_AllSpawns deleteAt _SelectLoc;
-					_i=_i+1;
-					//systemChat ["%1",_i];
-				};
-			};
-};
-//systemChat "Spawned Squads";
-_i=0;
-switch (_IglaOnRoadStatus) do {
-		case 0:{while {_i<_MaxIGLATurret} do {
-					_SelectLoc=random count _RoadSpawns;
-					_Location = _RoadSpawns select _SelectLoc;
-					_VicToSpawn=selectRandom _IglaTurret;
-					[_Location,_VicToSpawn,false] call rScripts_fnc_ga_spawnunit;
-					_RoadSpawns deleteAt _SelectLoc;
-					_i=_i+1;
-					//systemChat ["%1",_i];
-				};	
-			};
-	case 1:{while {_i<_MaxIGLATurret} do {
-					_SelectLoc=random count _NotRoadSpawns;
-					_Location = _NotRoadSpawns select _SelectLoc;
-					_VicToSpawn=selectRandom _IglaTurret;
-					[_Location,_VicToSpawn,false] call rScripts_fnc_ga_spawnunit;
-					_NotRoadSpawns deleteAt _SelectLoc;
-					_i=_i+1;
-					//systemChat ["%1",_i];
-				};
-			};
-	case 2:{while {_i<_MaxIGLATurret} do {
-					_SelectLoc=random count _AllSpawns;
-					_Location = _AllSpawns select _SelectLoc;
-					_VicToSpawn=selectRandom _IglaTurret;
-					[_Location,_VicToSpawn,false] call rScripts_fnc_ga_spawnunit;
-					_AllSpawns deleteAt _SelectLoc;
-					_i=_i+1;
-					//systemChat ["%1",_i];
-				};
-			};
-};
-//systemChat "Spawned Igla";
-_i=0;
-switch (_RadarGuidedGunStatus) do {
-		case 0:{while {_i<_MaxRadarGuidedGun} do {
-					_SelectLoc=random count _RoadSpawns;
-					_Location = _RoadSpawns select _SelectLoc;
-					_VicToSpawn=selectRandom _RadarGuidedGun;
-					[_Location,_VicToSpawn,true] call rScripts_fnc_ga_spawnunit;
-					_RoadSpawns deleteAt _SelectLoc;
-					_i=_i+1;
-					// systemChat ["%1",_i];
-				};	
-			};
-	case 1:{while {_i<_MaxRadarGuidedGun} do {
-					_SelectLoc=random count _NotRoadSpawns;
-					_Location = _NotRoadSpawns select _SelectLoc;
-					_VicToSpawn=selectRandom _RadarGuidedGun;
-					[_Location,_VicToSpawn,true] call rScripts_fnc_ga_spawnunit;
-					_NotRoadSpawns deleteAt _SelectLoc;
-					_i=_i+1;
-					// systemChat ["%1",_i];
-				};
-			};
-	case 2:{while {_i<_MaxRadarGuidedGun} do {
-					_SelectLoc=random count _AllSpawns;
-					_Location = _AllSpawns select _SelectLoc;
-					_VicToSpawn=selectRandom _RadarGuidedGun;
-					[_Location,_VicToSpawn,true] call rScripts_fnc_ga_spawnunit;
-					_AllSpawns deleteAt _SelectLoc;
-					_i=_i+1;
-					// systemChat ["%1",_i];
-				};
-			};
-};
-//systemChat "Spawned Radar Guided Gun";
-
-*/
