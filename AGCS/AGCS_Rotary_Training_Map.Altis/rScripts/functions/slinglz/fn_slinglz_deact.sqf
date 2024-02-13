@@ -16,7 +16,7 @@
  *
  */
 params ["_thisTrigger"];
-
+ if (!isServer) exitWith {};
 // Move the SLING_LZ_SMOKE_SPAWNER to the position of SLING_LZ_HQ
 SLING_LZ_SMOKE_SPAWNER setPOS (getPOS SLING_LZ_HQ);   
 

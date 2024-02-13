@@ -15,7 +15,7 @@
  * Public: No
  *
  */
-
+ if (!isServer) exitWith {};
 // Define actions for activation and deactivation
 _act = "[thisTrigger] call rScripts_fnc_smoke_maker; call rScripts_fnc_slinglz_act";
 _deact = "[thisTrigger] call rScripts_fnc_slinglz_deact";

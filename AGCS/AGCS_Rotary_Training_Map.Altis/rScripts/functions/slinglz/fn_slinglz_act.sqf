@@ -15,7 +15,7 @@
  * Public: No
  *
  */
-
+ if (!isServer) exitWith {};
 // Get the position of the SLING_LZ_SMOKE_SPAWNER
 _smokerPOS = getpos SLING_LZ_SMOKE_SPAWNER;  
 
