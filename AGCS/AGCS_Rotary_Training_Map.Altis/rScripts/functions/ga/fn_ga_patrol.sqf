@@ -20,7 +20,7 @@
  *
  */
 params ["_Location","_group"];
-
+ if (!isServer) exitWith {};
 // Define waypoints
 _waypointsArray = [
     [(_Location select 0) + 50, (_Location select 1) + 50, 0],  // Waypoint 1

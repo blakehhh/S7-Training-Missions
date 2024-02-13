@@ -24,7 +24,7 @@
  */
 
 params [["_TriggerArea",objNull,[objNull]],["_MaxVic",3],["_VicOnRoadStatus",0],["_MaxNumofSquads",3],["_InfOnRoadStatus",0],["_MaxIGLATurret",1],["_IglaOnRoadStatus",1],["_MaxRadarGuidedGun",1],["_RadarGuidedGunStatus",0]];
-
+ if (!isServer) exitWith {};
 //OPFOR Units Definitions
 _randomVehicleArray=["UK3CB_CW_SOV_O_EARLY_BTR40", 
 "UK3CB_CW_SOV_O_EARLY_BTR40_MG", 

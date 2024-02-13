@@ -15,6 +15,7 @@
  * Public: No
  */
 params ["_AreastoCheck"];
+ if (!isServer) exitWith {};
 {
 	_areaSingle=_x;
 	

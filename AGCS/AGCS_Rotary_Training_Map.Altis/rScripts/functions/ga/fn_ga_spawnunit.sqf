@@ -18,6 +18,7 @@
  */
 
  params ["_Location","_SpawnObject","_DoPatrol"];
+  if (!isServer) exitWith {};
 //_Location=getPos Player;
 //_SpawnObject="UK3CB_CW_SOV_O_Early_Igla_AA_pod";
 //_DoPatrol=false;

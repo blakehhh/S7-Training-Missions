@@ -26,7 +26,7 @@
  */
 params [["_RoadStatus",0,[0]],["_UnitCount",0,[0]],["_randomUnitArray",["UK3CB_CW_SOV_O_EARLY_BTR40"],[[]]],["_dopatrol",false,[true]],["_RoadSpawns",[0,0,0],[[]]],["_NotRoadSpawns",[0,0,0],[[]]],["_AllSpawns",[0,0,0],[[]]],["_TriggerArea",objNull,[objNull]]];
 //SHOW_CHAT_INFO_1("GA_SPAWNLOOP","%1",_RoadSpawns);
-
+ if (!isServer) exitWith {};
 _i=0;
 switch (_RoadStatus) do {
 	case 0:{while {_i<_UnitCount} do {
