@@ -4,7 +4,7 @@
  * This function handles gives the position to deliver the sling load
  *
  * Arguments:
- * 
+ * None
  *
  * Return Value:
  * Nothing
@@ -15,7 +15,15 @@
  * Public: No
  *
  */
+
+// Get the position of the SLING_LZ_SMOKE_SPAWNER
 _smokerPOS = getpos SLING_LZ_SMOKE_SPAWNER;  
+
+// Convert the position to a grid position
 _smokerGrid = mapGridPosition _smokerPOS;  
-_message=format ["Drop Off Location %1",_smokerGrid]; 
-[[west,"HQ"],_message] remoteExec ["sideChat",-2]; 
+
+// Format the message with the drop-off location
+_message = format ["Drop Off Location %1", _smokerGrid]; 
+
+// Send the message to the west side's HQ in side chat
+[[west,"HQ"], _message] remoteExec ["sideChat", -2]; 
