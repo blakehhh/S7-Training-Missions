@@ -16,9 +16,13 @@
  * Public: No
  *
  */
+params ["_randomLZArray", "_townFilter"];
 
-params ["_randomLZArray","_townFilter"];
-
+// Select a random LZ from the given list of locations
 _randomLZ = selectRandom _randomLZArray; 
+
+// Move the TIGHT_LZ_SMOKE_SPAWNER to the position of the randomly selected LZ
 TIGHT_LZ_SMOKE_SPAWNER setPOS (getPOS _randomLZ);
-[[west,"HQ"],format ["Proceed to %1",_townFilter]] remoteExec ["sideChat",-2];
+
+// Send a message to the west side's HQ indicating the town to proceed to
+[[west,"HQ"], format ["Proceed to %1", _townFilter]] remoteExec ["sideChat", -2];
