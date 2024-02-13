@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=5655;
+		nextID=5714;
 	};
 	class Camera
 	{
-		pos[]={23744.484,11.233326,17245.32};
-		dir[]={0.31876692,-0.27854487,-0.90606493};
-		up[]={0.092458494,0.96040332,-0.26280484};
-		aside[]={-0.94340461,4.4050284e-007,-0.33190084};
+		pos[]={9793.2148,150.77161,15303.922};
+		dir[]={0.96490622,-0.059615936,0.25617203};
+		up[]={0.057717852,0.99819863,0.015324884};
+		aside[]={0.2566306,-3.660316e-007,-0.9666242};
 	};
 };
 binarizationWanted=0;
@@ -80567,8 +80567,8 @@ class Mission
 			{
 				class Attribute0
 				{
-					property="MELB_clan";
-					expression="_this animate ['hide_clan',_value,true]";
+					property="MELB_SN_Nose";
+					expression="_this animate ['hide_SN_nose',_value,true]";
 					class Value
 					{
 						class data
@@ -80632,8 +80632,8 @@ class Mission
 				};
 				class Attribute5
 				{
-					property="MELB_SN_Nose";
-					expression="_this animate ['hide_SN_nose',_value,true]";
+					property="MELB_clan";
+					expression="_this animate ['hide_clan',_value,true]";
 					class Value
 					{
 						class data
@@ -82871,8 +82871,8 @@ class Mission
 			{
 				class Attribute0
 				{
-					property="MELB_clan";
-					expression="_this animate ['hide_clan',_value,true]";
+					property="MELB_SN_Nose";
+					expression="_this animate ['hide_SN_nose',_value,true]";
 					class Value
 					{
 						class data
@@ -82936,8 +82936,8 @@ class Mission
 				};
 				class Attribute5
 				{
-					property="MELB_SN_Nose";
-					expression="_this animate ['hide_SN_nose',_value,true]";
+					property="MELB_clan";
+					expression="_this animate ['hide_clan',_value,true]";
 					class Value
 					{
 						class data
@@ -92978,7 +92978,7 @@ class Mission
 					name="Pyrgos";
 					class Entities
 					{
-						items=20;
+						items=18;
 						class Item0
 						{
 							dataType="Trigger";
@@ -93087,28 +93087,6 @@ class Mission
 						class Item5
 						{
 							dataType="Trigger";
-							position[]={16550.75,27.75,12793.5};
-							angle=5.3029737;
-							class Attributes
-							{
-								name="TIGHT_LZ_PYRGOS_14";
-								condition="";
-								sizeA=5;
-								sizeB=8;
-								sizeC=2;
-								repeatable=1;
-								activationType="NOT PRESENT";
-								activationBy="ANYPLAYER";
-								isRectangle=1;
-								isServerOnly=1;
-							};
-							id=4191;
-							type="EmptyDetector";
-							atlOffset=4.543869;
-						};
-						class Item6
-						{
-							dataType="Trigger";
 							position[]={16818.125,17.27183,12934.5};
 							angle=0.67785168;
 							class Attributes
@@ -93127,7 +93105,7 @@ class Mission
 							id=4192;
 							type="EmptyDetector";
 						};
-						class Item7
+						class Item6
 						{
 							dataType="Trigger";
 							position[]={17173.375,15.744705,12681.375};
@@ -93148,7 +93126,7 @@ class Mission
 							id=4193;
 							type="EmptyDetector";
 						};
-						class Item8
+						class Item7
 						{
 							dataType="Trigger";
 							position[]={16961.625,18.63904,12548.875};
@@ -93169,7 +93147,7 @@ class Mission
 							id=4194;
 							type="EmptyDetector";
 						};
-						class Item9
+						class Item8
 						{
 							dataType="Trigger";
 							position[]={16826,17.661377,12485.5};
@@ -93190,7 +93168,7 @@ class Mission
 							id=4195;
 							type="EmptyDetector";
 						};
-						class Item10
+						class Item9
 						{
 							dataType="Trigger";
 							position[]={16743.625,15.701593,12569.875};
@@ -93212,7 +93190,7 @@ class Mission
 							type="EmptyDetector";
 							atlOffset=9.5367432e-007;
 						};
-						class Item11
+						class Item10
 						{
 							dataType="Trigger";
 							position[]={16577.277,11,12794.04};
@@ -93233,7 +93211,7 @@ class Mission
 							id=3168;
 							type="EmptyDetector";
 						};
-						class Item12
+						class Item11
 						{
 							dataType="Trigger";
 							position[]={16697.438,15.323252,12627.626};
@@ -93254,7 +93232,7 @@ class Mission
 							id=3174;
 							type="EmptyDetector";
 						};
-						class Item13
+						class Item12
 						{
 							dataType="Trigger";
 							position[]={16932.545,20.195618,12497.73};
@@ -93276,7 +93254,7 @@ class Mission
 							type="EmptyDetector";
 							atlOffset=-1.9073486e-006;
 						};
-						class Item14
+						class Item13
 						{
 							dataType="Trigger";
 							position[]={16997.162,16.43601,12804.095};
@@ -93297,7 +93275,7 @@ class Mission
 							id=3176;
 							type="EmptyDetector";
 						};
-						class Item15
+						class Item14
 						{
 							dataType="Trigger";
 							position[]={17002.609,16.154858,12885.634};
@@ -93318,7 +93296,7 @@ class Mission
 							id=3177;
 							type="EmptyDetector";
 						};
-						class Item16
+						class Item15
 						{
 							dataType="Trigger";
 							position[]={17016.871,16.509289,12826.175};
@@ -93341,7 +93319,7 @@ class Mission
 							type="EmptyDetector";
 							atlOffset=-1.9073486e-006;
 						};
-						class Item17
+						class Item16
 						{
 							dataType="Trigger";
 							position[]={16707.412,8.7491961,12456.357};
@@ -93362,7 +93340,7 @@ class Mission
 							id=3201;
 							type="EmptyDetector";
 						};
-						class Item18
+						class Item17
 						{
 							dataType="Trigger";
 							position[]={16765.625,20.380531,12785.125};
@@ -93383,28 +93361,6 @@ class Mission
 							id=4185;
 							type="EmptyDetector";
 						};
-						class Item19
-						{
-							dataType="Trigger";
-							position[]={16472.682,2.2827125,12367.83};
-							angle=-1.1547444;
-							class Attributes
-							{
-								name="TIGHT_LZ_PYRGOS_20";
-								condition="";
-								sizeA=5;
-								sizeB=8;
-								sizeC=2;
-								repeatable=1;
-								activationType="NOT PRESENT";
-								activationBy="ANYPLAYER";
-								isRectangle=1;
-								isServerOnly=1;
-							};
-							id=4198;
-							type="EmptyDetector";
-							atlOffset=1.1920929e-006;
-						};
 					};
 					id=4197;
 					atlOffset=0.9428997;
@@ -93415,7 +93371,7 @@ class Mission
 					name="Kavala";
 					class Entities
 					{
-						items=21;
+						items=18;
 						class Item0
 						{
 							dataType="Trigger";
@@ -93659,49 +93615,6 @@ class Mission
 						class Item11
 						{
 							dataType="Trigger";
-							position[]={3666.875,35.141724,12816.875};
-							angle=-1.8325942;
-							class Attributes
-							{
-								name="TIGHT_LZ_KAVALA_12";
-								condition="";
-								sizeA=5;
-								sizeB=8;
-								sizeC=2;
-								repeatable=1;
-								activationType="NOT PRESENT";
-								activationBy="ANYPLAYER";
-								isRectangle=1;
-								isServerOnly=1;
-							};
-							id=4218;
-							type="EmptyDetector";
-						};
-						class Item12
-						{
-							dataType="Trigger";
-							position[]={3352.5,2.0356469,12890.5};
-							angle=5.4977851;
-							class Attributes
-							{
-								name="TIGHT_LZ_KAVALA_13";
-								condition="";
-								sizeA=5;
-								sizeB=8;
-								sizeC=2;
-								repeatable=1;
-								activationType="NOT PRESENT";
-								activationBy="ANYPLAYER";
-								isRectangle=1;
-								isServerOnly=1;
-							};
-							id=4220;
-							type="EmptyDetector";
-							atlOffset=2.3841858e-007;
-						};
-						class Item13
-						{
-							dataType="Trigger";
 							position[]={3941.75,17.375,13598.5};
 							angle=4.0142579;
 							class Attributes
@@ -93721,7 +93634,7 @@ class Mission
 							type="EmptyDetector";
 							atlOffset=0.61198807;
 						};
-						class Item14
+						class Item12
 						{
 							dataType="Trigger";
 							position[]={3633.25,15.216833,12852.375};
@@ -93742,7 +93655,7 @@ class Mission
 							id=4224;
 							type="EmptyDetector";
 						};
-						class Item15
+						class Item13
 						{
 							dataType="Trigger";
 							position[]={3696.25,13.961719,13613.75};
@@ -93764,7 +93677,7 @@ class Mission
 							type="EmptyDetector";
 							atlOffset=9.5367432e-007;
 						};
-						class Item16
+						class Item14
 						{
 							dataType="Trigger";
 							position[]={3624,4.5891752,13562.375};
@@ -93785,7 +93698,7 @@ class Mission
 							id=4228;
 							type="EmptyDetector";
 						};
-						class Item17
+						class Item15
 						{
 							dataType="Trigger";
 							position[]={3733.5,14.235497,13720.625};
@@ -93807,7 +93720,7 @@ class Mission
 							type="EmptyDetector";
 							atlOffset=1.9073486e-006;
 						};
-						class Item18
+						class Item16
 						{
 							dataType="Trigger";
 							position[]={3825.4084,21.819695,13798.854};
@@ -93829,7 +93742,7 @@ class Mission
 							type="EmptyDetector";
 							atlOffset=4.0054321e-005;
 						};
-						class Item19
+						class Item17
 						{
 							dataType="Trigger";
 							position[]={3959.875,17.938864,13666.5};
@@ -93850,28 +93763,6 @@ class Mission
 							id=4233;
 							type="EmptyDetector";
 							atlOffset=1.9073486e-006;
-						};
-						class Item20
-						{
-							dataType="Trigger";
-							position[]={3731.74,38.900284,12976.376};
-							angle=3.1415908;
-							class Attributes
-							{
-								name="TIGHT_LZ_KAVALA_21";
-								condition="";
-								sizeA=5;
-								sizeB=8;
-								sizeC=2;
-								repeatable=1;
-								activationType="NOT PRESENT";
-								activationBy="ANYPLAYER";
-								isRectangle=1;
-								isServerOnly=1;
-							};
-							id=4234;
-							type="EmptyDetector";
-							atlOffset=0.53733063;
 						};
 					};
 					id=4200;
@@ -94387,7 +94278,7 @@ class Mission
 				{
 					dataType="Trigger";
 					position[]={17550.125,13.058828,13240.125};
-					angle=3.9111078;
+					angle=3.9111083;
 					class Attributes
 					{
 						name="IFR_FINISH";
