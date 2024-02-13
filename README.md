@@ -14,6 +14,7 @@ Create a `setup.json` and place it in the root directory of your mission file.
         "onLoadName" : "Training Mission v$0",
         "onLoadMission" : "7th Cavalry - S3 1BN Battle Staff Training",
         "onLoadIntro" : "S3 1BN Battle Staff Training",
+        "CfgFunctions" : [],
         "add" : []
     },
     "init.sqf" : {
