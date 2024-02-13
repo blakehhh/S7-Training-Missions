@@ -16,7 +16,7 @@
  * Public: No
  */
 params ["_lightDamage", "_distance"];
-
+ if (!isServer) exitWith {};
 // Ensure default values for parameters
 _onoff = [_this, 0, _lightDamage, [0]] call BIS_fnc_param;    
 _distance = [_this, 1, _distance, [0]] call BIS_fnc_param;    
