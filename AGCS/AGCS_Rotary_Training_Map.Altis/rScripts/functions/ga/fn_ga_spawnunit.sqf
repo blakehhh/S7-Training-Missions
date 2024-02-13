@@ -1,20 +1,22 @@
 #include "..\script_component.hpp";
 /*
  * Author: CW3.Sparrow.P
- * This function finds a 
+ * This function handles the spawning of units or groups at a specified location, with optional patrolling behavior.
  *
  * Arguments:
- * 0: AreatoCheck A trigger for which this check will happen in
- * 1: RoadCode an int that determines if we care if something is on a road, off a road or we just don't care
+ * 0: _Location Position where the unit or group should be spawned
+ * 1: _SpawnObject Object or group of objects to spawn
+ * 2: _DoPatrol Boolean indicating whether the spawned unit or group should patrol
+ * 
  * Return Value:
- * Position Value
+ * Nothing
  *
  * Example:
- * [TestTrg,2] call rScripts_fnc_ga_spawnunit;
+ * [TestTrg, 2,false] call rScripts_fnc_ga_spawnunit;
  *
  * Public: No
- *
  */
+
  params ["_Location","_SpawnObject","_DoPatrol"];
 //_Location=getPos Player;
 //_SpawnObject="UK3CB_CW_SOV_O_Early_Igla_AA_pod";
