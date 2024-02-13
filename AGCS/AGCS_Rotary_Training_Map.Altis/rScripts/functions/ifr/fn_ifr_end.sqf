@@ -1,7 +1,7 @@
 #include "..\script_component.hpp";
 /*
  * Author: CW3.Sparrow.P
- * This function Sets the time to noon, overcast to 0 and fog to 0 along with fixing all the lights around LZ blind
+ * This function sets the time to noon, overcast to 0, and fog to 0. It also turns off all lights around a specific location.
  *
  * Arguments:
  * 0: thisTrigger
@@ -13,7 +13,6 @@
  * call rScripts_fnc_ifr_placer;
  *
  * Public: No
- *
  */
 //Sets the time to noon, overcast to 0 and fog to 0 along with fixing all the lights around LZ blind
 setTimeMultiplier 1;  
