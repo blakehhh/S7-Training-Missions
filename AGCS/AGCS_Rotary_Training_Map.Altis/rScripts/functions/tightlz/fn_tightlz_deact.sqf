@@ -43,6 +43,7 @@ if (_SamePositionCheck isEqualto _spawnerPOS) then {
 
 if !(_HQPOS isEqualto _spawnerPOS) then {    
     _LZ = getPosASL _randomLZ;
+    //systemChat format["%1",_randomLZ];
     _LZ = [_LZ select 0, _LZ select 1, 0];
     TIGHT_LZ_SMOKE_SPAWNER setPOS (_LZ);   
     [[west,"HQ"], "New LZ Placed"] remoteExec ["sideChat", -2];    

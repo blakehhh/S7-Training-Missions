@@ -21,9 +21,7 @@ _randomLZArray = [];
 _townArray = [];
 _townLZs = [];
 
-// Define actions for activation and deactivation
-_act = "[thisTrigger] call rScripts_fnc_smoke_maker";
-_deact = format ["[%1,thisTrigger] call rScripts_fnc_tightlz_deact", _townLZs];
+
 
 // Get a list of all triggers named tight_lz_#
 { 
@@ -62,12 +60,17 @@ _deact = format ["[%1,thisTrigger] call rScripts_fnc_tightlz_deact", _townLZs];
     _title = format ["ARE Task 1: Tight LZs %1", _townFilter];
     _start = format ["[%1,'%2'] call rScripts_fnc_tightlz_startaction;", _townLZs, _townFilter];
     TIGHT_LZ_SELECTOR addAction [_title, _start];
+    
+    // Define actions for activation and deactivation
+    _act = "[thisTrigger] call rScripts_fnc_smoke_maker";
+    _deact = format ["[%1,thisTrigger] call rScripts_fnc_tightlz_deact", _townLZs];
 
     // Apply triggers for each LZ in the town
     {
         _x setTriggerType "NONE";
         _x setTriggerActivation ["ANYPLAYER", "NOT PRESENT", true];
         _x setTriggerStatements ["this && TIGHT_LZ_SMOKE_SPAWNER inArea thisTrigger", _act, _deact];
+        //systemChat format["%1",_deact];
     } forEach _townLZs;
 } forEach _townArray;
 

@@ -35,7 +35,7 @@ if (_cond) then {
         "SmokeShellPurple_Infinite",
         "SmokeShellBlue_Infinite"
     ];
-}
+};
 
 // Create smoke at the specified location
 _smoker = createVehicle [_smoketype, getPos _location, [], 0, "FLY"];  
