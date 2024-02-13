@@ -14,6 +14,7 @@
  *
  * Public: No
  */
+  if (!isServer) exitWith {};
 //Sets the time to noon, overcast to 0 and fog to 0 along with fixing all the lights around LZ blind
 setTimeMultiplier 1;  
 skipTime ((12 - dayTime + 24) % 24); 

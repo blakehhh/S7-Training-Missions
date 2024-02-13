@@ -15,7 +15,7 @@
  * Public: No
  *
  */
-
+ if (!isServer) exitWith {};
 IFR_SELECTOR addAction ["ARE Task 3: IFR Start",  {call rScripts_fnc_ifr_start;}];  
 IFR_SELECTOR addAction ["STOP ARE Task 3: IFR STOP",{call rScripts_fnc_ifr_end;}]; 
  
