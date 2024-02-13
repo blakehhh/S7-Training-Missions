@@ -1,11 +1,15 @@
 #include "..\script_component.hpp";
 /*
  * Author: CW3.Sparrow.P
- * This function finds a 
+ * This function sets up patrol waypoints for a group at a specified location.
+ *
+ * Summary:
+ * This function takes a location and a group as input and sets up patrol waypoints around that location for the given group.
  *
  * Arguments:
- * 0: AreatoCheck A trigger for which this check will happen in
- * 1: RoadCode an int that determines if we care if something is on a road, off a road or we just don't care
+ * 0: _Location - Location around which the patrol will be set up
+ * 1: _group - Group to which the patrol waypoints will be assigned
+ *
  * Return Value:
  * Position Value
  *
@@ -15,7 +19,7 @@
  * Public: No
  *
  */
- params ["_Location","_group"];
+params ["_Location","_group"];
 
 // Define waypoints
 _waypointsArray = [
@@ -24,16 +28,11 @@ _waypointsArray = [
     [(_Location select 0) - 50, (_Location select 1) - 50, 0],  // Waypoint 3
     [(_Location select 0) - 50, (_Location select 1) + 50, 0]  // Waypoint 4 (Cycle)
 ];
-//_lastWaypoint=count _waypointsArray;
-//_lastWaypoint=_lastWaypoint-1;
-//_i=0;
+
 // Add waypoints to the unit
 {
     _waypointMark=_group addWaypoint [_x, 100];
 	if ((count _waypointsArray)-1==_forEachIndex) then {
 		_waypointMark setWaypointType "CYCLE";
 	};
-	
 } forEach _waypointsArray;
-
-
