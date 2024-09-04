@@ -9,7 +9,6 @@ INFO(if (is3DEN) then {"EDEN"} else {"preInit"}, "Initializing CBA Settings...")
 // Check installed moduels
 EGVAR(patches,usesACE)          = isClass (configFile >> "CfgPatches" >> "ace_main");
 EGVAR(patches,usesACEArsenal)   = isClass (configFile >> "CfgPatches" >> "ace_arsenal");
-EGVAR(patches,usesACETagging)   = isClass (configFile >> "CfgPatches" >> "ace_tagging");
 EGVAR(patches,usesACEX)         = isClass (configFile >> "CfgPatches" >> "acex_main");
 EGVAR(patches,usesKat)          = isClass (configFile >> "CfgPatches" >> "kat_main");
 EGVAR(patches,usesACRE)         = isClass (configFile >> "CfgPatches" >> "acre_sys_core");
@@ -42,10 +41,9 @@ EGVAR(DATABASE,DONE) = false;
 GVAR(DATABASE) = call EFUNC(init,logistics);
 EGVAR(DATABASE,DONE) = true;
 
-
-if (EGVAR(Settings,allowCustomTagging)) then {
-    call EFUNC(init,aceTagging);
-};
+EGVAR(PYLONS,DONE) = false;
+GVAR(PYLONS) = call EFUNC(init,pylons);
+EGVAR(PYLONS,DONE) = true;
 
 call EFUNC(init,chatCommands);
 

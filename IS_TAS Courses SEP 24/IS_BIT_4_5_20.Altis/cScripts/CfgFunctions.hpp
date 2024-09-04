@@ -2,7 +2,6 @@ class cScripts {
     class init {
         file = "cScripts\functions\init";
         class init_aceArsenal {};
-        class init_aceTagging {};
         class init_aceItemReplace {};
 
         class init_skillAdjustment {};
@@ -10,6 +9,7 @@ class cScripts {
         class init_staging {};
 
         class init_logistics {};
+        class init_pylons {};
 
         class init_diary {};
         class init_message {};
@@ -67,7 +67,7 @@ class cScripts {
         class player_getRole {};
 
         class player_isCurator {};
-
+        class player_isMissionAdmin {};
         class unit_setTeamColor {};
         
         class unit_getName {};
@@ -133,6 +133,8 @@ class cScripts {
         class training_addHitIndicator {};
         class training_clearhitIndicator {};
 
+        class training_addTargetComputer {};
+
        // Plane jump
         class para_lineJump {};
         class para_haloJump {};
@@ -189,7 +191,10 @@ class cScripts {
 
         class vehicle_applyLoadout {};
         class vehicle_addDefaultLoadout {};
-        class vehicle_getPylon {};
+
+        class vehicle_getPylonName {};
+        class vehicle_getPylonLoadout {};
+        class vehicle_getPylonIcon {};
 
         // Other
         class vehicle_reset {};
@@ -241,6 +246,7 @@ class cScripts {
         // other
         class gear_getLoadoutRole {};
         class gear_getLoadoutName {};
+        class gear_getLoadoutDisplayName {};
     };
     class diag {
         file = "cScripts\functions\diag";

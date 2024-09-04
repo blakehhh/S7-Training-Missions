@@ -59,28 +59,41 @@ if (_vehicle iskindOf "cav_dragoon_base_F") then {
                 GET_CONTAINER("vehicle_strykerDragoon_V4")
             ] call FUNC(setCargo);
 
+            // 60mm Mortar into vehicle inventory
+            _vehicle addBackpackCargoGlobal ["NDS_B_M224_mortar",1];
+
+            // M240B with su230a sight into vehicle inventory
+            _vehicle addWeaponWithAttachmentsCargoGlobal [["rhs_weap_m240B","","","rhsusf_acc_su230a",["rhsusf_100Rnd_762x51_m62_tracer",100],[],""],1]; 
+
             // Supply Crate
-            ["Box_NATO_Equip_F", 
+            ["Box_NATO_Wps_F", 
                 GET_CONTAINER("crate_strykerDragoon_resupply"), 
                 _vehicle, nil, "Supply Crate"
             ] call FUNC(createCargoCrate);
 
-            // 4x 60mm mortars with ammo
-            ["Box_Syndicate_WpsLaunch_F", 
+            // 1x 60mm mortar with ammo
+            private _mortar_60mm_crate = ["Box_Syndicate_WpsLaunch_F", 
                 GET_CONTAINER("crate_strykerDragoon_60mm"), 
-                _vehicle, nil, "4x 60mm mortars with ammo"
+                _vehicle, nil, "60mm mortar with ammo"
             ] call FUNC(createCargoCrate);
-
-            // Ammo for 2x 82mm mortars
-            private _mortar_ammo_82mm = GET_CONTAINER("crate_strykerDragoon_82mm");
+            _mortar_60mm_crate addBackpackCargoGlobal ["NDS_B_M224_mortar",1];
+            
+            // 2x 81mm mortars
+            ["Box_NATO_WpsLaunch_F", 
+                GET_CONTAINER("crate_strykerDragoon_81mm"), 
+                _vehicle, nil, "81mm mortars"
+            ] call FUNC(createCargoCrate);
+            
+            // Ammo for 2x 81mm mortars
+            private _mortar_ammo_81mm = GET_CONTAINER("crate_strykerDragoon_81mm_ammo");
             ["ACE_Box_82mm_Mo_Combo", 
-                _mortar_ammo_82mm, 
-                _vehicle, nil, "Ammo for 2x 82mm mortars"
+                _mortar_ammo_81mm, 
+                _vehicle, nil, "Ammo for 81mm mortars"
             ] call FUNC(createCargoCrate);
             
             ["ACE_Box_82mm_Mo_Combo", 
-                _mortar_ammo_82mm,
-                _vehicle, nil, "Ammo for 2x 82mm mortars"
+                _mortar_ammo_81mm,
+                _vehicle, nil, "Ammo for 81mm mortars"
             ] call FUNC(createCargoCrate);
         };
 
@@ -100,9 +113,12 @@ if (_vehicle iskindOf "cav_dragoon_base_F") then {
             [_vehicle, 
                 GET_CONTAINER("vehicle_strykerDragoon")
             ] call FUNC(setCargo);
+            
+            // M240B with su230a sight into vehicle inventory
+            _vehicle addWeaponWithAttachmentsCargoGlobal [["rhs_weap_m240B","","","rhsusf_acc_su230a",["rhsusf_100Rnd_762x51_m62_tracer",100],[],""],1]; 
 
             // Supply Crate
-            ["Box_NATO_Equip_F", 
+            ["Box_NATO_Wps_F", 
                 GET_CONTAINER("crate_strykerDragoon_resupply"), 
                 _vehicle, nil, "Resupply Crate"
             ] call FUNC(createCargoCrate);
@@ -141,8 +157,11 @@ if (_vehicle iskindOf "cav_dragoon_base_F") then {
                 GET_CONTAINER("vehicle_strykerDragoon")
             ] call FUNC(setCargo);
 
+            // M240B with su230a sight into vehicle inventory
+            _vehicle addWeaponWithAttachmentsCargoGlobal [["rhs_weap_m240B","","","rhsusf_acc_su230a",["rhsusf_100Rnd_762x51_m62_tracer",100],[],""],1]; 
+
             // Supply Crate
-            ["Box_NATO_Equip_F", 
+            ["Box_NATO_Wps_F", 
                 GET_CONTAINER("crate_strykerDragoon_resupply"), 
                 _vehicle, nil, "Resupply Crate"
             ] call FUNC(createCargoCrate);
@@ -207,14 +226,14 @@ if (_vehicle iskindOf "MRAP_01_base_F") then {
             ["ACE_Wheel", _vehicle, true] call ace_cargo_fnc_loadItem;
             ["ACE_Wheel", _vehicle, true] call ace_cargo_fnc_loadItem;
             ["ACE_Wheel", _vehicle, true] call ace_cargo_fnc_loadItem;
-
+            ["FlexibleTank_01_forest_F", _vehicle, true] call ace_cargo_fnc_loadItem; // Emergency Fuel Tank
             // Vehicle Inventory
             [_vehicle, 
                 GET_CONTAINER("vehicle_strykerDragoon")
             ] call FUNC(setCargo);
 
             // Supply Crate
-            ["Box_NATO_Equip_F", 
+            ["Box_NATO_Wps_F", 
                 GET_CONTAINER("crate_strykerDragoon_resupply"), 
                 _vehicle, nil, "Resupply Crate"
             ] call FUNC(createCargoCrate);
@@ -246,7 +265,7 @@ if (_vehicle iskindOf "MRAP_01_base_F") then {
             ] call FUNC(setCargo);
 
             // Supply Crate
-            ["Box_NATO_Equip_F", 
+            ["Box_NATO_Wps_F", 
                 GET_CONTAINER("crate_strykerDragoon_resupply"), 
                 _vehicle, nil, "Resupply Crate"
             ] call FUNC(createCargoCrate);
@@ -335,6 +354,18 @@ if (_vehicle iskindOf "RHS_MELB_base") then {
     [_vehicle, []] call FUNC(setCargo);
 };
 
+if (_vehicle isKindOf "AFV_Wheeled_01_base_F") then {
+    [_vehicle, 5, -1, false, false] call FUNC(setCargoAttributes);
+    
+    // Emergency kit in case of tire damage and fuel loss.
+    ["ACE_Wheel", _vehicle, true] call ace_cargo_fnc_loadItem;
+    ["ACE_Wheel", _vehicle, true] call ace_cargo_fnc_loadItem;
+    ["FlexibleTank_01_forest_F", _vehicle, true] call ace_cargo_fnc_loadItem; // Emergency Fuel Tank
+
+    [_vehicle, 
+        GET_CONTAINER("vehicle_rooikat")
+    ] call FUNC(setCargo);
+};
 
 // Deployable
 if (_vehicle iskindOf "rhs_m2staticmg_base") then {

@@ -15,12 +15,15 @@
  * Public: No
  */
 
-params ["_company"];
+params ["_company", "_platoon"];
 
 _company = toLower _company;
 
 // If you dont have a company don't show any.
 if (_company == "") exitWith {false};
+
+// There are 4 platoons in a company. 0 is for if there is no difference between the companies.
+if (_platoon < 0 || _platoon > 4) exitWith {false};
 
 
 // Show all loadouts
@@ -30,6 +33,7 @@ if (EGVAR(Staging,showAllLoadouts)) exitWith {true};
 
 // Check if player is Zeus or Debug
 if (call EFUNC(player,isCurator)) exitWith {true};
+if (call EFUNC(player,isMissionAdmin)) exitWith {true};
 
 // Check if does not have any company
 private _playerCompany = call EFUNC(player,getCompany);

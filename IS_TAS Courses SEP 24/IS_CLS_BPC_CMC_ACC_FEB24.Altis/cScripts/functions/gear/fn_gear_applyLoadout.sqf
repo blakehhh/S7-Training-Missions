@@ -36,10 +36,11 @@ if (_loadConfig) then {
     };
     _unit setVariable [QEGVAR(Gear,LoadoutClass), _loadout];
 
-    // Company
-    if (GVAR(isPlayer)) then {
-        private _company = getText (_config >> "company");
-        [_company] call EFUNC(player,setCompany);
+    // Organizaiton
+    if (hasInterface) then {
+        private _configPlatoon = getNumber (_config >> "platoon");
+        private _configCompany = getText (_config >> "company");
+        [_configPlatoon,_configCompany] call EFUNC(Player,setOrganization);
     };
 };
 
@@ -76,19 +77,17 @@ if (!_loadArray) then {
 };
 
 // Functions
-if (GVAR(isPlayer)) then {
+if (hasInterface) then {
     call EFUNC(gear,applyFunctions);
+    call EFUNC(gear,applyCosmetics);
+
+    [_unit, goggles _unit] call ace_goggles_fnc_applyGlassesEffect;
+
+    _unit selectWeapon (primaryWeapon _unit);
+    if !(weaponLowered _unit) then {_unit action ["WeaponOnBack", _unit]};
+
+    [QEGVAR(StagingArsenal,SaveWhitelist)] call CBA_fnc_localEvent;
 };
-
-// Select weapon
-_unit selectWeapon (primaryWeapon _unit);
-
-// Apply googles effect after loadout applications
-[_unit, goggles _unit] call ace_goggles_fnc_applyGlassesEffect;
-
-// Lower the weapon
-if !(weaponLowered _unit) then {_unit action ["WeaponOnBack", _unit]};
-
 
 if (_loadConfig) then {
     INFO_2("Gear", "Applying postLoadout code for %1 [%2]", _unit, typeOf _unit);

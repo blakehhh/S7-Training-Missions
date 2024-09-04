@@ -2,7 +2,6 @@ class cScripts {
     class init {
         file = "cScripts\functions\init";
         class init_aceArsenal {};
-        class init_aceTagging {};
         class init_aceItemReplace {};
 
         class init_skillAdjustment {};
@@ -10,6 +9,7 @@ class cScripts {
         class init_staging {};
 
         class init_logistics {};
+        class init_pylons {};
 
         class init_diary {};
         class init_message {};
@@ -39,12 +39,14 @@ class cScripts {
     class logistics {
         file = "cScripts\functions\logistics";
         class addCargo {};
+        class setCargo {};
         class setCargoAttributes {};
         class checkItemValidity {};
         class createCargoCrate {};
 
         class doStarterCrateSupplies {};
         class doFieldHospital {};
+        class doSupplyCrate {};
 
         class doEmptyCrate {};
 
@@ -65,7 +67,7 @@ class cScripts {
         class player_getRole {};
 
         class player_isCurator {};
-
+        class player_isMissionAdmin {};
         class unit_setTeamColor {};
         
         class unit_getName {};
@@ -78,8 +80,10 @@ class cScripts {
         class setRadioChannel {};
         class setActiveRadio {};
 
+        class player_getOrganization {};
         class player_getCompany {};
-        class player_setCompany {};
+        class player_getPlatoon {};
+        class player_setOrganization {};
 
         // Other Functions
         class unit_getVariables {};
@@ -102,7 +106,6 @@ class cScripts {
         class addStagingZone {};
 
         class doStarterCrate {};
-        class doSupplyCrate {};
 
         class makeAgent {};
     };
@@ -129,6 +132,8 @@ class cScripts {
         // Training scripts
         class training_addHitIndicator {};
         class training_clearhitIndicator {};
+
+        class training_addTargetComputer {};
 
        // Plane jump
         class para_lineJump {};
@@ -186,7 +191,10 @@ class cScripts {
 
         class vehicle_applyLoadout {};
         class vehicle_addDefaultLoadout {};
-        class vehicle_getPylon {};
+
+        class vehicle_getPylonName {};
+        class vehicle_getPylonLoadout {};
+        class vehicle_getPylonIcon {};
 
         // Other
         class vehicle_reset {};
@@ -202,8 +210,6 @@ class cScripts {
         file = "cScripts\functions\modules";
         class zenModule_EnableUnitSimulation {};
 
-        class zenModule_CreateFieldHospital {};
-        class zenModule_CreateMedicalCrate {};
         class zenModule_CreateStarterCrate {};
         class zenModule_CreateSupplyCrate {};
 
@@ -240,6 +246,7 @@ class cScripts {
         // other
         class gear_getLoadoutRole {};
         class gear_getLoadoutName {};
+        class gear_getLoadoutDisplayName {};
     };
     class diag {
         file = "cScripts\functions\diag";
