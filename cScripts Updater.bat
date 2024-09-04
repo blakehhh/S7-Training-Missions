@@ -1,0 +1,1 @@
+for /D %%a in ("C:\Users\HomePC\Documents\GitHub\S7-Training-Missions\IS_TAS Courses SEP 24\*") do xcopy /s /Y /d C:\Users\HomePC\Documents\GitHub\S7-Training-Missions\cScripts_newVersion\* "%%a\"
