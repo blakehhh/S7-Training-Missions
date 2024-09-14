@@ -25,3 +25,7 @@ ACE_maxWeightDrag = 10000;
 INFO("init", "Initialization completed.");
 
 /* APPLY STUFF ONLY BELOW THIS LINE */
+
+    tawvd_disablenone = true;
+
+createCenter EAST;

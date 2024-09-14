@@ -5,7 +5,7 @@ player allowDamage false;
 
 addMissionEventHandler ["Draw3D",
 	{
-		if (typeOf player == "rhsusf_usmc_marpat_wd_officer") then {
+		if ((typeOf player == "Cav_B_C_SquadLeader_Bandit_2_F") or (typeOf player == "Cav_B_C_SquadLeader_Bandit_1_F")) then {
 			{			
 				if ((side _x == east) and ((_x distance player) < 1000)) then			
 				{				
