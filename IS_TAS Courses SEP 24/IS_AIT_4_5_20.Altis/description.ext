@@ -6,8 +6,8 @@ dev                 = "1LT.Tallamy.D, SSG Hilberg.A";
 author              = "1LT.Tallamy.D, SSG Hilberg.A";
 
 onLoadName          = "Advanced Individual Training";
-onLoadMission       = "7th Cavalry - S7 Training Mission";
-onLoadIntro         = "S7 1BN Battle Training Mission";
+onLoadMission       = "S7 1BN Infantry School";
+onLoadIntro         = "S7 1BN Infantry School";
 
 loadScreen          = "Data\MissionLogo.paa";
 overviewPicture     = "Data\MissionLogo.paa";
