@@ -47,3 +47,21 @@ if(isServer) then {
 
 [missionNameSpace, ["showLanes", false]] remoteExec ["setvariable", 0, true];
 [missionNameSpace, ["showTerrainAssociation", false]] remoteExec ["setvariable", 0, true];
+
+[]spawn {
+    while {true} do {
+        {
+          _x unassignItem "ItemAndroid";
+          _x unassignItem "ItemcTab";
+          _x unassignItem "ItemMicroDAGR";
+          _x unassignItem "ItemGPS";
+          _x removeItems "ItemAndroid";
+          _x removeItems "ItemcTab";
+          _x removeItems "ItemMicroDAGR";
+          _x removeItems "ItemGPS";
+          _x removeItems "ACE_microDAGR";
+          _x removeItems "ACE_Vector";
+          _x removeItems "ACE_VectorDay";
+        }  forEach allUnits;
+    }
+}
