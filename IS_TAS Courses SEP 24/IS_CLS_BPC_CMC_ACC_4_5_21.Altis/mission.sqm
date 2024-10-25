@@ -16,18 +16,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=970;
+		nextID=991;
 	};
 	class Camera
 	{
-		pos[]={21064.674,130.89644,16768.293};
-		dir[]={0.86150575,-0.50773948,-0.0057737823};
-		up[]={0.50773722,0.86150342,-0.003403692};
-		aside[]={-0.0067035435,1.2318378e-07,-0.99998814};
+		pos[]={24580.234,20.574873,19258.277};
+		dir[]={-0.54400754,-0.58046901,-0.60596842};
+		up[]={-0.38778445,0.81426811,-0.43195319};
+		aside[]={-0.74416095,-9.3865674e-07,0.66806555};
 	};
 };
 binarizationWanted=0;
-sourceName="IS_CLS_BPC_CMC_ACC_4_5_20";
+sourceName="IS_CLS_BPC_CMC_ACC_4_5_21";
 addons[]=
 {
 	"cav_troops_bravo_atlas",
@@ -52316,7 +52316,7 @@ class CustomAttributes
 																			class data
 																			{
 																				singleType="STRING";
-																				value="USP_TACTICAL_PACK_CCT4";
+																				value="USP_TACTICAL_PACK";
 																			};
 																		};
 																		class Item1
@@ -59313,7 +59313,7 @@ class CustomAttributes
 																			class data
 																			{
 																				singleType="STRING";
-																				value="USP_TACTICAL_PACK_CCT8";
+																				value="USP_TACTICAL_PACK";
 																			};
 																		};
 																		class Item1
@@ -78536,7 +78536,7 @@ class Mission
 							};
 							id=884;
 							type="I_Survivor_F";
-							atlOffset=1.3911734;
+							atlOffset=0.32640457;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -78613,7 +78613,7 @@ class Mission
 						dynamicSimulation=1;
 					};
 					id=883;
-					atlOffset=1.3911734;
+					atlOffset=0.32640457;
 				};
 				class Item30
 				{
@@ -78631,7 +78631,7 @@ class Mission
 								angles[]={0,3.1262455,0};
 							};
 							side="Independent";
-							flags=3;
+							flags=7;
 							class Attributes
 							{
 								skill=0.2;
@@ -78684,7 +78684,7 @@ class Mission
 							};
 							id=886;
 							type="I_Survivor_F";
-							atlOffset=4.4655476;
+							atlOffset=0.077876091;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -78761,7 +78761,7 @@ class Mission
 						dynamicSimulation=1;
 					};
 					id=885;
-					atlOffset=4.4655476;
+					atlOffset=0.077876091;
 				};
 				class Item31
 				{
@@ -78779,7 +78779,7 @@ class Mission
 								angles[]={0,0.98428494,0};
 							};
 							side="Independent";
-							flags=3;
+							flags=7;
 							class Attributes
 							{
 								skill=0.2;
@@ -78832,7 +78832,7 @@ class Mission
 							};
 							id=888;
 							type="I_Survivor_F";
-							atlOffset=1.5320463;
+							atlOffset=0.0097150803;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -78909,7 +78909,7 @@ class Mission
 						dynamicSimulation=1;
 					};
 					id=887;
-					atlOffset=1.5320463;
+					atlOffset=0.0097150803;
 				};
 				class Item32
 				{
@@ -78927,7 +78927,7 @@ class Mission
 								angles[]={0,1.7562559,0};
 							};
 							side="Independent";
-							flags=3;
+							flags=7;
 							class Attributes
 							{
 								skill=0.2;
@@ -78980,7 +78980,7 @@ class Mission
 							};
 							id=890;
 							type="I_Survivor_F";
-							atlOffset=2.1786613;
+							atlOffset=0.069646835;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -79057,7 +79057,7 @@ class Mission
 						dynamicSimulation=1;
 					};
 					id=889;
-					atlOffset=2.1786613;
+					atlOffset=0.069646835;
 				};
 				class Item33
 				{
@@ -79075,7 +79075,7 @@ class Mission
 								angles[]={0,3.9878371,0};
 							};
 							side="Independent";
-							flags=3;
+							flags=7;
 							class Attributes
 							{
 								skill=0.2;
@@ -79128,7 +79128,7 @@ class Mission
 							};
 							id=892;
 							type="I_Survivor_F";
-							atlOffset=4.8650126;
+							atlOffset=2.9563904e-05;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -79205,7 +79205,7 @@ class Mission
 						dynamicSimulation=1;
 					};
 					id=891;
-					atlOffset=4.8650126;
+					atlOffset=2.9563904e-05;
 				};
 				class Item34
 				{
@@ -96781,7 +96781,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={27064.988,22.182043,21503.65};
-			angle=3.9803998;
+			angle=3.9803996;
 			class Attributes
 			{
 				sizeA=29.525;
@@ -107358,7 +107358,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={20895.045,94.926514,16800.617};
-						angles[]={0,3.5637772,-0};
+						angles[]={0,3.5637772,0};
 					};
 					side="East";
 					flags=3;
@@ -107434,7 +107434,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={20890.543,96.766449,16815.477};
-						angles[]={0,4.8247075,-0};
+						angles[]={0,4.8247075,0};
 					};
 					side="East";
 					flags=3;
